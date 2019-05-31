@@ -1,0 +1,9 @@
+.MessageList {
+    margin: 0;
+    padding: 10px 10px 15px 10px;
+    list-style: none;
+    background-color: #f0f0ff;
+    border-radius: 10px 10px 0 0;
+    overflow-y: auto;
+    height: 100%;
+}

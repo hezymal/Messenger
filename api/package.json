@@ -1,0 +1,14 @@
+{
+    "name": "messenger-api",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node ./src/app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "https://github.com/hezymal",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-ws": "^4.0.0"
+    }
+}

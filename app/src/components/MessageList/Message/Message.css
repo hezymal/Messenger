@@ -1,0 +1,22 @@
+.Message {
+    padding: 5px 5px 0 5px;
+}
+    .Message__Cloud {
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .Message_Received {
+        display: flex;
+    }
+        .Message_Received .Message__Cloud {
+            background-color: #aaffaa;
+            color: #333333;
+        }
+    .Message_Sent {
+        display: flex;
+        justify-content: flex-end;
+    }
+        .Message_Sent .Message__Cloud {
+            background-color: #ffaaaa;
+            color: #333333;
+        }

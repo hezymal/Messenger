@@ -1,0 +1,38 @@
+.MessageInput {
+    display: flex;
+}
+
+    .MessageInput__Input {
+        border: none;
+        border-radius: 0 0 0 10px;
+        padding: 0 10px;
+        height: 40px;
+        line-height: 40px;
+        width: calc(100% - 100px);
+        background-color: #c8c8ff;
+    }
+        .MessageInput__Input:focus {
+            outline: none;
+            background-color: #d8d8ff;
+        }
+
+    .MessageInput__Button {
+        border: none;
+        border-radius: 0 0 10px 0;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        cursor: pointer;
+        background-color: #6868ff;
+        color: white;
+        text-transform: uppercase;
+    }
+        .MessageInput__Button:hover {
+            background-color: #7878ff;
+        }
+        .MessageInput__Button:active {
+            background-color: #8888ff;
+        }
+        .MessageInput__Button:focus {
+            outline: none;
+        }
