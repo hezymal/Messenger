@@ -5,11 +5,17 @@
         padding: 10px;
         border-radius: 10px;
     }
+    .Message__Header {
+        font-size: 10px;
+        color: #777777;
+        margin-bottom: 5px;
+        text-align: right;
+    }
     .Message_Received {
         display: flex;
     }
         .Message_Received .Message__Cloud {
-            background-color: #aaffaa;
+            background-color: #c8c8ff;
             color: #333333;
         }
     .Message_Sent {
@@ -17,6 +23,6 @@
         justify-content: flex-end;
     }
         .Message_Sent .Message__Cloud {
-            background-color: #ffaaaa;
+            background-color: #c8c8ff;
             color: #333333;
         }
