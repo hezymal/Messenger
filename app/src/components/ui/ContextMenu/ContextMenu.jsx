@@ -17,6 +17,20 @@ function getCursorClassName(cursorDirection) {
     return className;
 }
 
+function Option(props) {
+    const { option, onClickOption } = props;
+
+    return (
+        <li 
+            className="ContextMenu__Option"
+            onClick={() => onClickOption(option)}
+        >
+            {option.icon && <i className={"fa fa-" + option.icon} />}
+            {option.title}
+        </li>
+    );
+}
+
 function ContextMenu(props) {
     const { options, onClickOption, cursorDirection } = props;
     const finalCursorClassName = getCursorClassName(cursorDirection);
@@ -25,19 +39,14 @@ function ContextMenu(props) {
         <div className="ContextMenu">
             <i className={finalCursorClassName} />
             <ol className="ContextMenu__List">
-                {options.map(option =>
+                {options.map((option, index) =>
                     typeof option === "string"
-                        ? <hr className="ContextMenu__Divider" />
-                        : <li 
-                            className="ContextMenu__Option"
-                            key={option.key} 
-                            onClick={() => onClickOption(option)}
-                        >
-                            {option.icon && (
-                                <i className={"fa fa-" + option.icon} />
-                            )}
-                            {option.title}
-                        </li>
+                        ? <hr key={index} className="ContextMenu__Divider" />
+                        : <Option 
+                            key={index} 
+                            option={option} 
+                            onClickOption={onClickOption} 
+                        />
                 )}
             </ol>
         </div>

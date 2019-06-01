@@ -1,5 +1,7 @@
 .ContextMenu {
     position: relative;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
 }
     .ContextMenu__List {
         position: relative;
@@ -16,7 +18,7 @@
         color: #333333;
     }
         .ContextMenu__Option:hover {
-            background-color: #eeeeee;
+            background-color: #ddddee;
         }
         .ContextMenu__Option:first-child {
             border-radius: 10px 10px 0 0;
@@ -35,8 +37,8 @@
         color: white;
     }
     .ContextMenu__Divider {
-        margin: 0 10px;
+        margin: 3px 0;
         border: none;
         height: 1px;
-        background-color: #cccccc;
+        background-color: #ddd;
     }
