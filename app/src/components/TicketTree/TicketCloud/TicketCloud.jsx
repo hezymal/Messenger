@@ -18,6 +18,8 @@ function TicketCloud(props) {
 
 TicketCloud.contextMenu = {
     options: [
+        { key: "rename", title: "Rename", icon: "pen" },
+        "-",
         { key: "add", title: "Add Sub Ticket", icon: "plus-circle" },
         { key: "remove", title: "Remove Sub Ticket", icon: "times-circle" },
     ]

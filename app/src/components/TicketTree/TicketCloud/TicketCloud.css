@@ -6,6 +6,7 @@
     border: none;
     cursor: pointer;
     outline: none;
+    font-size: 14px;
 }
     .TicketCloud:hover {
         background-color: #d8d8ff;

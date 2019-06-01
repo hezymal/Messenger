@@ -26,16 +26,18 @@ function ContextMenu(props) {
             <i className={finalCursorClassName} />
             <ol className="ContextMenu__List">
                 {options.map(option =>
-                    <li 
-                        className="ContextMenu__Option"
-                        key={option.key} 
-                        onClick={() => onClickOption(option)}
-                    >
-                        {option.icon && (
-                            <i className={"fa fa-" + option.icon} />
-                        )}
-                        {option.title}
-                    </li>
+                    typeof option === "string"
+                        ? <hr className="ContextMenu__Divider" />
+                        : <li 
+                            className="ContextMenu__Option"
+                            key={option.key} 
+                            onClick={() => onClickOption(option)}
+                        >
+                            {option.icon && (
+                                <i className={"fa fa-" + option.icon} />
+                            )}
+                            {option.title}
+                        </li>
                 )}
             </ol>
         </div>
