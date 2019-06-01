@@ -1,0 +1,11 @@
+.TicketGroup {
+    margin: 0;
+    padding: 3px 0 0 0;
+    list-style: none;
+}
+    .TicketGroup__Ticket {
+        margin: 0 0 3px 0;
+    }
+    .TicketGroup__SubTickets {
+        padding: 0 0 0 20px;
+    }

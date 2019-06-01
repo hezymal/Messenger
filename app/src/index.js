@@ -6,6 +6,7 @@ import { createMiddleware as createWebSocketMiddleware } from "middlewares/webSo
 import reducers from "reducers";
 import App from "components/App";
 import * as serviceWorker from "utils/serviceWorker";
+import "@fortawesome/fontawesome-free/css/all.css";
 import "index.css";
 
 const webSocket = new WebSocket("ws://localhost:4000/ws");

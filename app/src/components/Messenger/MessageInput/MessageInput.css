@@ -23,6 +23,7 @@
         background-color: #6868ff;
         color: white;
         text-transform: uppercase;
+        padding: 0;
     }
         .MessageInput__Button:hover {
             background-color: #7878ff;

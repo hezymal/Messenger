@@ -1,0 +1,36 @@
+.ContextMenu {
+    position: relative;
+}
+    .ContextMenu__List {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border-radius: 10px;
+        list-style: none;
+        background-color: white;
+    }
+        .ContextMenu__Option {
+            cursor: pointer;
+            padding: 0 10px;
+            line-height: 30px;
+            color: #333333;
+        }
+            .ContextMenu__Option:hover {
+                background-color: #eeeeee;
+            }
+            .ContextMenu__Option:first-child {
+                border-radius: 10px 10px 0 0;
+            }
+            .ContextMenu__Option:last-child {
+                border-radius: 0 0 10px 10px;
+            }
+            .ContextMenu__Option .fa {
+                margin: 0 10px 0 0;
+            }
+    .ContextMenu__Cursor {
+        position: absolute;
+        top: 8px;
+        left: -6px;
+        font-size: 20px;
+        color: white;
+    }
