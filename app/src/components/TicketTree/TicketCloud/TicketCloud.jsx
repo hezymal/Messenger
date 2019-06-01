@@ -16,4 +16,11 @@ function TicketCloud(props) {
     );
 }
 
+TicketCloud.contextMenu = {
+    options: [
+        { key: "add", title: "Add Sub Ticket", icon: "plus-circle" },
+        { key: "remove", title: "Remove Sub Ticket", icon: "times-circle" },
+    ]
+};
+
 export default handleContextMenu(TicketCloud);

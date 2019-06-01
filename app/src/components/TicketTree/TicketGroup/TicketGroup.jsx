@@ -18,10 +18,6 @@ function TicketGroup(props) {
                     >
                         <TicketCloud
                             title={ticket.title}
-                            contextMenuOptions={[
-                                { key: "add", title: "Add", icon: "plus-circle" },
-                                { key: "remove", title: "Remove", icon: "times-circle" },
-                            ]}
                             onClickContextMenuOption={console.log.bind(console)}
                         />
                         {existSubTickets && (

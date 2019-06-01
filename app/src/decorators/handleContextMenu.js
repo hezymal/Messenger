@@ -18,7 +18,7 @@ const handleContextMenu = Component =>
         }
 
         render() {
-            const { contextMenuOptions, onClickContextMenuOption, ...tail } = this.props;
+            const { onClickContextMenuOption, ...tail } = this.props;
             const { visible } = this.state;
 
             return (
@@ -30,7 +30,7 @@ const handleContextMenu = Component =>
                     <div style={style} ref={this.menu}>
                         {visible && (
                             <ContextMenu 
-                                options={contextMenuOptions} 
+                                options={Component.contextMenu.options} 
                                 onClickOption={onClickContextMenuOption} 
                             />
                         )}
@@ -50,6 +50,24 @@ const handleContextMenu = Component =>
             menuElement.style.top = `${top}px`;
         };
 
+        getPositionFromEvent = event => {
+            switch (Component.contextMenu.relativeKind) {
+                case "cursor":
+                    return {
+                        left: event.pageX + 6,
+                        top: event.pageY - 18,
+                    };
+
+                default: {
+                    const element = event.currentTarget;
+                    return {
+                        left: element.offsetLeft + element.offsetWidth + 6, 
+                        top: element.offsetTop,
+                    };
+                }
+            }
+        };
+
         toggle = command => {
             const visible = command === "show";
 
@@ -61,14 +79,10 @@ const handleContextMenu = Component =>
         };
         
         handleContextMenu = event => {
-            const { currentTarget } = event;
-
             event.preventDefault();
-            
-            this.setPosition({ 
-                left: currentTarget.offsetLeft + currentTarget.offsetWidth + 6, 
-                top: currentTarget.offsetTop 
-            });
+            event.stopPropagation();
+
+            this.setPosition(this.getPositionFromEvent(event));
             this.toggle("show");
         };
         
