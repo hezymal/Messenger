@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
-import { createMiddleware as createWebSocketMiddleware } from "./middlewares/webSocket";
-import reducers from "./reducers";
-import App from "./containers/App";
-import * as serviceWorker from "./serviceWorker";
-import "./index.css";
+import { createMiddleware as createWebSocketMiddleware } from "middlewares/webSocket";
+import reducers from "reducers";
+import App from "components/App";
+import * as serviceWorker from "utils/serviceWorker";
+import "index.css";
 
 const webSocket = new WebSocket("ws://localhost:4000/ws");
 const webSocketMiddleware = createWebSocketMiddleware(webSocket);

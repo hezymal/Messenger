@@ -1,0 +1,29 @@
+.TicketTree {
+    border-radius: 10px 0 0 10px;
+    background-color: #f0f0ff;
+    height: 100%;
+    padding: 7px 10px 10px 10px;
+    overflow: auto;
+}
+    .TicketTree__Group {
+        margin: 0;
+        padding: 3px 0 0 0;
+        list-style: none;
+    }
+    .TicketTree__Ticket {
+        margin: 0 0 3px 0;
+    }
+    .TicketTree__Cloud {
+        background-color: #c8c8ff;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+    }
+        .TicketTree__Cloud:hover {
+            background-color: #d8d8ff;
+        }
+    .TicketTree__SubTickets {
+        padding: 0 0 0 20px;
+    }

@@ -1,0 +1,14 @@
+.App {
+    display: flex;
+    height: 100%;
+}
+    .App__LeftColumn {
+        width: 300px;
+        height: 100%;
+        padding: 5px 0 5px 5px;
+    }
+    .App__RightColumn {
+        width: calc(100% - 300px);
+        height: 100%;
+        padding: 5px;
+    }
