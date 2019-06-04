@@ -5,7 +5,7 @@ const style = {
     position: "fixed"
 };
 
-const handleContextMenu = Component =>
+const handleContextMenu = (Component, settings) =>
     class ContextMenuHandler extends React.PureComponent {
         menu = React.createRef();
 
@@ -30,7 +30,7 @@ const handleContextMenu = Component =>
                     <div style={style} ref={this.menu}>
                         {visible && (
                             <ContextMenu 
-                                options={Component.contextMenu.options} 
+                                options={settings.options} 
                                 onClickOption={onClickContextMenuOption} 
                             />
                         )}
@@ -51,7 +51,7 @@ const handleContextMenu = Component =>
         };
 
         getPositionFromEvent = event => {
-            switch (Component.contextMenu.relativeKind) {
+            switch (settings.relativeKind) {
                 case "cursor":
                     return {
                         left: event.pageX + 6,

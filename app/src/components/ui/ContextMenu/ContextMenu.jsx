@@ -23,7 +23,7 @@ function Option(props) {
     return (
         <li 
             className="ContextMenu__Option"
-            onClick={() => onClickOption(option)}
+            onClick={() => onClickOption(option.key)}
         >
             {option.icon && <i className={"fa fa-" + option.icon} />}
             {option.title}

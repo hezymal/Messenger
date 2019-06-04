@@ -1,5 +1,5 @@
 import React from "react";
-import handleContextMenu from "decorators/handleContextMenu";
+import wrapContextMenu from "decorators/wrapContextMenu";
 import TicketGroup from "./TicketGroup";
 import "./TicketTree.css";
 
@@ -25,4 +25,4 @@ TicketTree.contextMenu = {
     ],
 };
 
-export default handleContextMenu(TicketTree);
+export default wrapContextMenu(TicketTree);

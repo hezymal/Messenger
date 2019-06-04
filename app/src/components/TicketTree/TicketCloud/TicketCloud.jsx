@@ -1,8 +1,8 @@
 import React from "react";
-import handleContextMenu from "decorators/handleContextMenu";
+import wrapContextMenu from "decorators/wrapContextMenu";
 import "./TicketCloud.css";
 
-function TicketCloud(props) {
+function Ticket(props) {
     const { title, onContextMenu } = props;
 
     return (
@@ -16,13 +16,45 @@ function TicketCloud(props) {
     );
 }
 
-TicketCloud.contextMenu = {
+const TicketWithContextMenu = wrapContextMenu(Ticket, {
     options: [
         { key: "rename", title: "Rename", icon: "pen" },
         "-",
         { key: "add", title: "Add Sub Ticket", icon: "plus-circle" },
         { key: "remove", title: "Remove Sub Ticket", icon: "times-circle" },
     ]
-};
+});
 
-export default handleContextMenu(TicketCloud);
+class TicketCloud extends React.PureComponent {
+    static getDerivedStateFromProps(state, props) {
+        return {
+            ...state,
+            title: state.title || props.title,
+        };
+    }
+
+    state = {
+        title: "",
+        renaming: false,
+    };
+
+    render() {
+        return (
+            <TicketWithContextMenu 
+                {...this.props} 
+                title={this.state.title}
+                onClickContextMenuOption={this.handleClickContextMenuOption}
+            />
+        );
+    }
+
+    handleClickContextMenuOption = optionKey => {
+        if (optionKey === "rename") {
+            this.setState({ renaming: true });
+        }
+
+        this.props.onClickContextMenuOption(optionKey);
+    };
+}
+
+export default TicketCloud;
